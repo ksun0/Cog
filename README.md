@@ -4,7 +4,7 @@ Cog is an efficient, user friendly web application where you can visualize your 
 
 Scheduling itself is a stressful process. Let Cog take care of it for you.
 
-View our initial MVP here: https://cogtest-3376185029.ddns.net/
+View our initial MVP here: https://cog-tasks.herokuapp.com/
 Future Vision: To become a simplistic pooling of many information sources with crowdsourced expandability.
 
 # Cog Instruction Document
