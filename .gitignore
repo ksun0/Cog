@@ -19,9 +19,6 @@ __pycache__/
 
 *.pyc
 .DS_Store
-Cog/client_secret.json
-
-client_secret.json
 
 Dashboard/static/font-awesome-4.7.0/*
 static/*/*
