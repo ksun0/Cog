@@ -213,5 +213,6 @@ STATICFILES_FINDERS = (
 SECRET_KEY = 'kufx5ij(o*t)z^1(p1%mw_qim2#k+o)070xno8xuhgw39gig$^'
 DEBUG = False
 import dj_database_url
+DATABASES = {}
 DATABASES['default'] =  dj_database_url.config()
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'cog-tasks.herokuapp.com']
