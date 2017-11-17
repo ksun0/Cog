@@ -9,8 +9,6 @@ ENV/
 Dashboard/migrations/
 Dashboard/migrations/*
 db.sqlite3
-Dashboard/static/admin/*
-Dashboard/admin/*
 
 Cog/private_settings.py
 Cog/settings.py.bak
@@ -19,7 +17,3 @@ __pycache__/
 
 *.pyc
 .DS_Store
-
-Dashboard/static/font-awesome-4.7.0/*
-static/*/*
-Dashboard/static/bower_components/*

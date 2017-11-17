@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Webfonts Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+	    body, textarea { font-family:Arial, Sans-Serif; line-height:1.6em; font-size:13px; }
+	    h1 { font-size:3em; }
+	    h2, h3 { color:#999; }
+	    .content { width:780px; margin: 20px auto 40px; }
+	    .demo { font-weight:bold; font-style:normal; color: #999 }
+	    .fontdisplay {font-size:2em;line-height:150%;margin: 10px 40px 0px 0px;}
+	    .guidelines { color:#333; }
+	    pre { padding:0 0 0 20px; }
+	    hr { border:0; border-bottom:1px solid #537094; margin:20px 0; }
+	    .link { color: #537094;text-decoration:none; font-weight:bold;}
+	    .uc {text-transform:uppercase}
+	    
+    </style>
+    <style type="text/css">
+    @font-face{
+        font-family:"Avenir LT W01_35 Light1475496";
+        src:url("Fonts/edefe737-dc78-4aa3-ad03-3c6f908330ed.eot?#iefix");
+        src:url("Fonts/edefe737-dc78-4aa3-ad03-3c6f908330ed.eot?#iefix") format("eot"),url("Fonts/0078f486-8e52-42c0-ad81-3c8d3d43f48e.woff2") format("woff2"),url("Fonts/908c4810-64db-4b46-bb8e-823eb41f68c0.woff") format("woff"),url("Fonts/4577388c-510f-4366-addb-8b663bcc762a.ttf") format("truetype"),url("Fonts/b0268c31-e450-4159-bfea-e0d20e2b5c0c.svg#b0268c31-e450-4159-bfea-e0d20e2b5c0c") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_35 Light_1475502";
+        src:url("Fonts/63a166cb-be60-435c-a056-75172e43efa5.eot?#iefix");
+        src:url("Fonts/63a166cb-be60-435c-a056-75172e43efa5.eot?#iefix") format("eot"),url("Fonts/a59168c1-917d-4de9-a244-0316c057c357.woff2") format("woff2"),url("Fonts/6dc0e7d8-9284-44e1-8f05-984a41daa3a4.woff") format("woff"),url("Fonts/2315df7a-8bc2-433d-bf0a-162fc0063de0.ttf") format("truetype"),url("Fonts/7b1e5b2a-b6a6-43da-9021-ada6d1d797f2.svg#7b1e5b2a-b6a6-43da-9021-ada6d1d797f2") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_45 Book1475508";
+        src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix");
+        src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix") format("eot"),url("Fonts/065a6b14-b2cc-446e-9428-271c570df0d9.woff2") format("woff2"),url("Fonts/65d75eb0-2601-4da5-a9a4-9ee67a470a59.woff") format("woff"),url("Fonts/c70e90bc-3c94-41dc-bf14-caa727c76301.ttf") format("truetype"),url("Fonts/0979215b-3a1b-4356-9c76-e90fa4551f1d.svg#0979215b-3a1b-4356-9c76-e90fa4551f1d") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_45 Book O1475514";
+        src:url("Fonts/d8c50fcc-bc32-4f31-8c24-b170c64e2254.eot?#iefix");
+        src:url("Fonts/d8c50fcc-bc32-4f31-8c24-b170c64e2254.eot?#iefix") format("eot"),url("Fonts/476612d9-282d-4f76-95cd-b4dd31e7ed21.woff2") format("woff2"),url("Fonts/f1ebae2b-5296-4244-8771-5f40e60a564a.woff") format("woff"),url("Fonts/04d1bf6c-070d-4b7e-9498-6051c9f0c349.ttf") format("truetype"),url("Fonts/d0a3e813-1257-4b66-812a-36101faa0fb3.svg#d0a3e813-1257-4b66-812a-36101faa0fb3") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Light";
+        src:url("Fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix");
+        src:url("Fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix") format("eot"),url("Fonts/de1216be-00c2-43c0-9c45-3e7f925eb519.woff2") format("woff2"),url("Fonts/bc176270-17fa-4c78-a343-9fe52824e501.woff") format("woff"),url("Fonts/3516f91d-ac48-42cd-acfe-1be691152cc4.ttf") format("truetype"),url("Fonts/d1b1e866-a411-42ba-8f75-72bf28e23694.svg#d1b1e866-a411-42ba-8f75-72bf28e23694") format("svg");
+    }
+    @font-face{
+        font-family:"DINNextW01-LightItalic";
+        src:url("Fonts/3ab2ca1d-35c8-4471-9c57-04cb66b9cffa.eot?#iefix");
+        src:url("Fonts/3ab2ca1d-35c8-4471-9c57-04cb66b9cffa.eot?#iefix") format("eot"),url("Fonts/26f280d7-8bd0-4192-90f1-3c3cb4cde341.woff2") format("woff2"),url("Fonts/e1c997f3-fb27-4289-abc6-5ef059e51723.woff") format("woff"),url("Fonts/0b3b140c-bdbe-488f-8976-992b4104de0c.ttf") format("truetype"),url("Fonts/1fdd14a5-aaa2-4662-a7ae-ab0d4c3adb3c.svg#1fdd14a5-aaa2-4662-a7ae-ab0d4c3adb3c") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Regular";
+        src:url("Fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix");
+        src:url("Fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix") format("eot"),url("Fonts/44e7b0fa-6c8d-43c2-b19e-f1e3ce9ea57c.woff2") format("woff2"),url("Fonts/c5a7f89e-15b6-49a9-8259-5ea665e72191.woff") format("woff"),url("Fonts/868c94b5-ca49-46b7-b62b-297f8d861125.ttf") format("truetype"),url("Fonts/e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg#e3145f65-29b5-4f7f-8c6e-2dc135021b6a") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Italic";
+        src:url("Fonts/4393bcd9-65c9-4c71-b688-9a0c17e40ebf.eot?#iefix");
+        src:url("Fonts/4393bcd9-65c9-4c71-b688-9a0c17e40ebf.eot?#iefix") format("eot"),url("Fonts/f37f8098-b16e-405f-ab24-bd595a5d5762.woff2") format("woff2"),url("Fonts/c5635d60-91fa-4e4b-8a51-41c97fc744c3.woff") format("woff"),url("Fonts/de34232f-b870-49c0-a6c0-24c25db73bc2.ttf") format("truetype"),url("Fonts/35916fb2-3ed3-4d39-bec8-74155a53b1f0.svg#35916fb2-3ed3-4d39-bec8-74155a53b1f0") format("svg");
+    }
+    @font-face{
+        font-family:"FreightSans W01 Book";
+        src:url("Fonts/bcf99a42-5caf-468b-8e66-66723f76bff3.eot?#iefix");
+        src:url("Fonts/bcf99a42-5caf-468b-8e66-66723f76bff3.eot?#iefix") format("eot"),url("Fonts/7eb5d6ea-90f7-45d2-b771-5bd5b4978eb0.woff2") format("woff2"),url("Fonts/204e59d2-807e-4208-8c9a-7b6b18a37f2b.woff") format("woff"),url("Fonts/2ef2ae21-f888-48e0-b607-fa5f9bf9cbd3.ttf") format("truetype"),url("Fonts/848a2515-53da-4d96-918e-bfe72a228967.svg#848a2515-53da-4d96-918e-bfe72a228967") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Lt";
+        src:url("Fonts/b3e9f984-f8ca-4650-90c3-d6f0aca0a27d.eot?#iefix");
+        src:url("Fonts/b3e9f984-f8ca-4650-90c3-d6f0aca0a27d.eot?#iefix") format("eot"),url("Fonts/e7e30ff2-3a95-49b0-bbf9-024f40ead426.woff2") format("woff2"),url("Fonts/b984f4e8-e37d-4502-bead-ffd991e64d1f.woff") format("woff"),url("Fonts/82d18baa-8811-4aa8-9338-9bafa08350d0.ttf") format("truetype"),url("Fonts/20e14bb9-6aec-47a9-8ef8-5613bf1d6eae.svg#20e14bb9-6aec-47a9-8ef8-5613bf1d6eae") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Lt It";
+        src:url("Fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix");
+        src:url("Fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix") format("eot"),url("Fonts/6ad65c4a-999a-4b06-92ad-075dd9a6c0a7.woff2") format("woff2"),url("Fonts/3efa8eef-d81a-4a5b-ba15-94c5afa463cf.woff") format("woff"),url("Fonts/0ac3a8d1-ea58-4bc8-b995-cd7fce51290e.ttf") format("truetype"),url("Fonts/f360572f-8d74-4e11-b63c-91a55e17c82d.svg#f360572f-8d74-4e11-b63c-91a55e17c82d") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Bd";
+        src:url("Fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix");
+        src:url("Fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix") format("eot"),url("Fonts/eba438b3-9ab9-48ba-b1c5-610f83b38303.woff2") format("woff2"),url("Fonts/acfb7490-30f6-4bf4-a1b8-70ff9172d209.woff") format("woff"),url("Fonts/5bf402e3-ba96-414e-bc7e-cb6689fe32c1.ttf") format("truetype"),url("Fonts/c5dceae7-427a-4765-b06b-ea2eecca3434.svg#c5dceae7-427a-4765-b06b-ea2eecca3434") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Bd It";
+        src:url("Fonts/67452424-3136-49b1-827d-49c5dcde5779.eot?#iefix");
+        src:url("Fonts/67452424-3136-49b1-827d-49c5dcde5779.eot?#iefix") format("eot"),url("Fonts/fd5daa3f-a61a-4aed-93cd-54bc94bb59b6.woff2") format("woff2"),url("Fonts/088bed5d-3869-422a-8876-df9a6992b434.woff") format("woff"),url("Fonts/b0e5af12-5659-4451-b843-6fade25c4e53.ttf") format("truetype"),url("Fonts/e590a993-9202-42bc-a22f-25243e6b0d5a.svg#e590a993-9202-42bc-a22f-25243e6b0d5a") format("svg");
+    }
+</style>
+<script type="text/javascript">
+var MTIProjectId='80997c0e-61aa-49e0-a596-7a393f81f78a';
+ (function() {
+        var mtiTracking = document.createElement('script');
+        mtiTracking.type='text/javascript';
+        mtiTracking.async='true';
+         mtiTracking.src='mtiFontTrackingCode.js';
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+   })();
+</script>
+</head>
+<body>
+    <div class="content">
+        <h1 class="demo">Fonts.com Web fonts</h1>
+        <p style="margin-top: -10px; font-size: 1.5em; color: #666"><b>@font-face implementation instructions</b></p>
+        <p>The asynchronous script loads in the background allowing the other elements of your website to load first and undeterred.</p>
+        <hr />
+        <p class="uc">The fonts contained in this kit are:</p>
+        <div class="fontdisplay">
+            <div style="font-family:'DIN Next W01 Italic';"> DIN Next™ W01 Italic </div>
+<div style="font-family:'DIN Next W01 Light';"> DIN Next™ W01 Light </div>
+<div style="font-family:'DINNextW01-LightItalic';"> DIN Next™ W01 Light Italic </div>
+<div style="font-family:'DIN Next W01 Regular';"> DIN Next™ W01 Regular </div>
+<div style="font-family:'Myriad W01 Bd';"> Myriad® W01 Bold </div>
+<div style="font-family:'Myriad W01 Bd It';"> Myriad® W01 Bold Italic </div>
+<div style="font-family:'Myriad W01 Lt';"> Myriad® W01 Light </div>
+<div style="font-family:'Myriad W01 Lt It';"> Myriad® W01 Light Italic </div>
+<div style="font-family:'Avenir LT W01_35 Light1475496';"> Avenir® W01 35 Light </div>
+<div style="font-family:'Avenir LT W01_35 Light_1475502';"> Avenir® W01 35 Light Oblique </div>
+<div style="font-family:'Avenir LT W01_45 Book1475508';"> Avenir® W01 45 Book </div>
+<div style="font-family:'Avenir LT W01_45 Book O1475514';"> Avenir® W01 45 Book Oblique </div>
+<div style="font-family:'FreightSans W01 Book';"> Freight Sans W01 Book </div>
+
+        </div>
+        <hr />
+        Click here for <a class="link uc" href="demo.htm">css only</a> web fonts implementation
+        <hr />
+        <div class="guidelines">
+            <h2>CSS Implementation Guidelines</h2>
+            <p>You and any third party web font hosting service are responsible for ensuring that the font software in the self-hosting kit, in its original format, can only be used on the Web Sites for which the self-hosting kit was downloaded and cannot be used or referenced by any other web site. This includes, but is not limited to installing adequate technical protection measures that restrict the use and/or access to the font software, for instance by utilizing JavaScript or access control mechanism for cross-origin resource sharing and protecting against use on web sites other than the Web Sites for which the self-hosting kit was downloaded by restricting domain access only to such Web Sites. You must also retain the pageview tracking code on any Web Site that you self-host. In the event this Agreement terminates for any reason, the font software included with the self-hosting kit must be deleted from the server and all copies must be destroyed or returned to Monotype Imaging.</p>
+            <p>View <a class="link" href="http://www.fonts.com/info/legal/eula/web-fonts" target="_blank">"WEB FONT SOFTWARE" LICENSE AGREEMENT</a></p>
+            <h2>Asynchronous Implementation (Requires JavaScript)</h2>
+            <p>Font file names have been obfuscated to protect the font software. You can identify font format based on file ending:</p>
+            <ul>
+                <li>1 - TrueType (ttf)</li>
+                <li>2 - Embedded OpenType (eot)</li>
+                <li>3 - Web Open Font Format (woff)</li>
+                <li>4 - Web Open Font Format version 2 (woff2)</li>
+                <li>5 - Scalable Vector Graphics (svg)</li>
+                
+            </ul>
+            <p class="uc" style="margin: 20px 0px -20px;"><b>Copy and paste following code in head section of the page</b></p>
+            <hr />
+            <textarea style="width: 830px; height: 350px; border: 1 #fff solid; background-color: #fcfcfc;"><style type="text/css">
+    @font-face{
+        font-family:"Avenir LT W01_35 Light1475496";
+        src:url("Fonts/edefe737-dc78-4aa3-ad03-3c6f908330ed.eot?#iefix");
+        src:url("Fonts/edefe737-dc78-4aa3-ad03-3c6f908330ed.eot?#iefix") format("eot"),url("Fonts/0078f486-8e52-42c0-ad81-3c8d3d43f48e.woff2") format("woff2"),url("Fonts/908c4810-64db-4b46-bb8e-823eb41f68c0.woff") format("woff"),url("Fonts/4577388c-510f-4366-addb-8b663bcc762a.ttf") format("truetype"),url("Fonts/b0268c31-e450-4159-bfea-e0d20e2b5c0c.svg#b0268c31-e450-4159-bfea-e0d20e2b5c0c") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_35 Light_1475502";
+        src:url("Fonts/63a166cb-be60-435c-a056-75172e43efa5.eot?#iefix");
+        src:url("Fonts/63a166cb-be60-435c-a056-75172e43efa5.eot?#iefix") format("eot"),url("Fonts/a59168c1-917d-4de9-a244-0316c057c357.woff2") format("woff2"),url("Fonts/6dc0e7d8-9284-44e1-8f05-984a41daa3a4.woff") format("woff"),url("Fonts/2315df7a-8bc2-433d-bf0a-162fc0063de0.ttf") format("truetype"),url("Fonts/7b1e5b2a-b6a6-43da-9021-ada6d1d797f2.svg#7b1e5b2a-b6a6-43da-9021-ada6d1d797f2") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_45 Book1475508";
+        src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix");
+        src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix") format("eot"),url("Fonts/065a6b14-b2cc-446e-9428-271c570df0d9.woff2") format("woff2"),url("Fonts/65d75eb0-2601-4da5-a9a4-9ee67a470a59.woff") format("woff"),url("Fonts/c70e90bc-3c94-41dc-bf14-caa727c76301.ttf") format("truetype"),url("Fonts/0979215b-3a1b-4356-9c76-e90fa4551f1d.svg#0979215b-3a1b-4356-9c76-e90fa4551f1d") format("svg");
+    }
+    @font-face{
+        font-family:"Avenir LT W01_45 Book O1475514";
+        src:url("Fonts/d8c50fcc-bc32-4f31-8c24-b170c64e2254.eot?#iefix");
+        src:url("Fonts/d8c50fcc-bc32-4f31-8c24-b170c64e2254.eot?#iefix") format("eot"),url("Fonts/476612d9-282d-4f76-95cd-b4dd31e7ed21.woff2") format("woff2"),url("Fonts/f1ebae2b-5296-4244-8771-5f40e60a564a.woff") format("woff"),url("Fonts/04d1bf6c-070d-4b7e-9498-6051c9f0c349.ttf") format("truetype"),url("Fonts/d0a3e813-1257-4b66-812a-36101faa0fb3.svg#d0a3e813-1257-4b66-812a-36101faa0fb3") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Light";
+        src:url("Fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix");
+        src:url("Fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix") format("eot"),url("Fonts/de1216be-00c2-43c0-9c45-3e7f925eb519.woff2") format("woff2"),url("Fonts/bc176270-17fa-4c78-a343-9fe52824e501.woff") format("woff"),url("Fonts/3516f91d-ac48-42cd-acfe-1be691152cc4.ttf") format("truetype"),url("Fonts/d1b1e866-a411-42ba-8f75-72bf28e23694.svg#d1b1e866-a411-42ba-8f75-72bf28e23694") format("svg");
+    }
+    @font-face{
+        font-family:"DINNextW01-LightItalic";
+        src:url("Fonts/3ab2ca1d-35c8-4471-9c57-04cb66b9cffa.eot?#iefix");
+        src:url("Fonts/3ab2ca1d-35c8-4471-9c57-04cb66b9cffa.eot?#iefix") format("eot"),url("Fonts/26f280d7-8bd0-4192-90f1-3c3cb4cde341.woff2") format("woff2"),url("Fonts/e1c997f3-fb27-4289-abc6-5ef059e51723.woff") format("woff"),url("Fonts/0b3b140c-bdbe-488f-8976-992b4104de0c.ttf") format("truetype"),url("Fonts/1fdd14a5-aaa2-4662-a7ae-ab0d4c3adb3c.svg#1fdd14a5-aaa2-4662-a7ae-ab0d4c3adb3c") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Regular";
+        src:url("Fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix");
+        src:url("Fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix") format("eot"),url("Fonts/44e7b0fa-6c8d-43c2-b19e-f1e3ce9ea57c.woff2") format("woff2"),url("Fonts/c5a7f89e-15b6-49a9-8259-5ea665e72191.woff") format("woff"),url("Fonts/868c94b5-ca49-46b7-b62b-297f8d861125.ttf") format("truetype"),url("Fonts/e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg#e3145f65-29b5-4f7f-8c6e-2dc135021b6a") format("svg");
+    }
+    @font-face{
+        font-family:"DIN Next W01 Italic";
+        src:url("Fonts/4393bcd9-65c9-4c71-b688-9a0c17e40ebf.eot?#iefix");
+        src:url("Fonts/4393bcd9-65c9-4c71-b688-9a0c17e40ebf.eot?#iefix") format("eot"),url("Fonts/f37f8098-b16e-405f-ab24-bd595a5d5762.woff2") format("woff2"),url("Fonts/c5635d60-91fa-4e4b-8a51-41c97fc744c3.woff") format("woff"),url("Fonts/de34232f-b870-49c0-a6c0-24c25db73bc2.ttf") format("truetype"),url("Fonts/35916fb2-3ed3-4d39-bec8-74155a53b1f0.svg#35916fb2-3ed3-4d39-bec8-74155a53b1f0") format("svg");
+    }
+    @font-face{
+        font-family:"FreightSans W01 Book";
+        src:url("Fonts/bcf99a42-5caf-468b-8e66-66723f76bff3.eot?#iefix");
+        src:url("Fonts/bcf99a42-5caf-468b-8e66-66723f76bff3.eot?#iefix") format("eot"),url("Fonts/7eb5d6ea-90f7-45d2-b771-5bd5b4978eb0.woff2") format("woff2"),url("Fonts/204e59d2-807e-4208-8c9a-7b6b18a37f2b.woff") format("woff"),url("Fonts/2ef2ae21-f888-48e0-b607-fa5f9bf9cbd3.ttf") format("truetype"),url("Fonts/848a2515-53da-4d96-918e-bfe72a228967.svg#848a2515-53da-4d96-918e-bfe72a228967") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Lt";
+        src:url("Fonts/b3e9f984-f8ca-4650-90c3-d6f0aca0a27d.eot?#iefix");
+        src:url("Fonts/b3e9f984-f8ca-4650-90c3-d6f0aca0a27d.eot?#iefix") format("eot"),url("Fonts/e7e30ff2-3a95-49b0-bbf9-024f40ead426.woff2") format("woff2"),url("Fonts/b984f4e8-e37d-4502-bead-ffd991e64d1f.woff") format("woff"),url("Fonts/82d18baa-8811-4aa8-9338-9bafa08350d0.ttf") format("truetype"),url("Fonts/20e14bb9-6aec-47a9-8ef8-5613bf1d6eae.svg#20e14bb9-6aec-47a9-8ef8-5613bf1d6eae") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Lt It";
+        src:url("Fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix");
+        src:url("Fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix") format("eot"),url("Fonts/6ad65c4a-999a-4b06-92ad-075dd9a6c0a7.woff2") format("woff2"),url("Fonts/3efa8eef-d81a-4a5b-ba15-94c5afa463cf.woff") format("woff"),url("Fonts/0ac3a8d1-ea58-4bc8-b995-cd7fce51290e.ttf") format("truetype"),url("Fonts/f360572f-8d74-4e11-b63c-91a55e17c82d.svg#f360572f-8d74-4e11-b63c-91a55e17c82d") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Bd";
+        src:url("Fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix");
+        src:url("Fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix") format("eot"),url("Fonts/eba438b3-9ab9-48ba-b1c5-610f83b38303.woff2") format("woff2"),url("Fonts/acfb7490-30f6-4bf4-a1b8-70ff9172d209.woff") format("woff"),url("Fonts/5bf402e3-ba96-414e-bc7e-cb6689fe32c1.ttf") format("truetype"),url("Fonts/c5dceae7-427a-4765-b06b-ea2eecca3434.svg#c5dceae7-427a-4765-b06b-ea2eecca3434") format("svg");
+    }
+    @font-face{
+        font-family:"Myriad W01 Bd It";
+        src:url("Fonts/67452424-3136-49b1-827d-49c5dcde5779.eot?#iefix");
+        src:url("Fonts/67452424-3136-49b1-827d-49c5dcde5779.eot?#iefix") format("eot"),url("Fonts/fd5daa3f-a61a-4aed-93cd-54bc94bb59b6.woff2") format("woff2"),url("Fonts/088bed5d-3869-422a-8876-df9a6992b434.woff") format("woff"),url("Fonts/b0e5af12-5659-4451-b843-6fade25c4e53.ttf") format("truetype"),url("Fonts/e590a993-9202-42bc-a22f-25243e6b0d5a.svg#e590a993-9202-42bc-a22f-25243e6b0d5a") format("svg");
+    }
+</style>
+<script type="text/javascript">
+var MTIProjectId='80997c0e-61aa-49e0-a596-7a393f81f78a';
+ (function() {
+        var mtiTracking = document.createElement('script');
+        mtiTracking.type='text/javascript';
+        mtiTracking.async='true';
+         mtiTracking.src='mtiFontTrackingCode.js';
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+   })();
+</script></textarea>
+            <h3>Licensing information should be included within the CSS</h3>
+<pre>/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.fonts.com
+*/</pre>
+        </div>
+    </div>
+</body>
+</html>
