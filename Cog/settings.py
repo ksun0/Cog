@@ -210,7 +210,7 @@ STATICFILES_FINDERS = (
 )
 
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'kufx5ij(o*t)z^1(p1%mw_qim2#k+o)070xno8xuhgw39gig$^'s
+SECRET_KEY = 'kufx5ij(o*t)z^1(p1%mw_qim2#k+o)070xno8xuhgw39gig$^'
 DEBUG = False
 DATABASES = {
     'default': dj_database_url.config(
