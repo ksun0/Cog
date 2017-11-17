@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-from decouple import config
+# from decouple import config
 import dj_database_url
 import logger
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -209,8 +209,9 @@ STATICFILES_FINDERS = (
     'pipeline.finders.PipelineFinder',
 )
 
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+# SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'kufx5ij(o*t)z^1(p1%mw_qim2#k+o)070xno8xuhgw39gig$^'s
+DEBUG = False
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
