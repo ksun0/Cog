@@ -1,0 +1,191 @@
+{% load staticfiles %}
+{% load pipeline %}
+<!-- for people who haven't signed in/up yet -->
+<!-- this is meant to be a promotional page -->
+<!-- someone please add CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+
+<title>
+  Cog | Welcome
+</title>
+
+{% javascript 'universal_libraries' %}
+{% stylesheet 'libraries' %}
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <img alt="Brand" src="{% static 'img/logo-white.png' %}" class="navbar-logo">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a class="page-scroll" href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#about">About</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#features">Features</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Intro Section -->
+  <section id="intro" class="intro-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <h1 class="appearingText text1">
+            Spend.
+          </h1>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <h1 class="appearingText text2">
+            Time.
+          </h1>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <h1 class="appearingText text3">
+            Wisely.
+          </h1>
+        </div>
+        <div class="col-xs-12">
+          <h1 class="appearingText text4">
+            <img alt="Brand" src="{% static 'img/logo.png' %}" style="width: 300px;">
+          </h1>
+          <a class="appearingText text5 btn btn-info btn-lg" href="/signup">
+            Create Account
+          </a>
+          <a class="appearingText text5 btn btn-info btn-lg page-scroll" href="#about">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section landing-section">
+    <div class="container landing-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="text-center">About CoG</h1>
+          <hr>
+          <blockquote class="blockquote">
+            <h3>We are a simplistic pooling of many information sources with crowdsourced expandability.</h3>
+          </blockquote>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <h2 class="text-center"><i class="fa fa-clock-o"></i></h2>
+          <h3 class="text-center text-bold">Donut UI</h3>
+          <p>With Cog, you can visualize your schedule on a <b class="">12-hour time wheel</b>. The dynamic clock will slowly eat away at your time, <b>maximizing productivity and efficiency</b>, while minimizing procrastination.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <h2 class="text-center"><i class="fa fa-cog fa-spin"></i></h2></h2>
+          <h3 class="text-center text-bold">Smart Manager</h3>
+          <p>Cog automatically estimates the <b>lengths of your tasks</b> and arranges them for you. With our unique Donut UI, you can see how long your tasks will take and make maximum use of your time!</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-xs-12">
+          <h2 class="text-center"><i class="fa fa-calendar"></i></h2>
+          <h3 class="text-center text-bold">Easy Scheduling</h3>
+          <p>Scheduling itself is a stressful process. Let Cog take care of it for you. You can turn your long to-do lists into organized schedules, and also <b>import</b> from Google Calendars and other sources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section landing-section">
+    <div class="container landing-container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Features</h1>
+          <hr>
+          <blockquote class="blockquote">
+            <h3>More features coming soon ...</h3>
+          </blockquote>
+          <a class="btn btn-info btn-lg btn-block" href="/signup">Download Cog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section landing-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Contact</h1>
+          <hr>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="{% static 'img/alex.png' %}" alt="Alex" style="max-width: 100%">
+            <div class="">
+              <h4><b>Alex Reichenbach</b></h4>
+              <p>localhost</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="{% static 'img/darcy.png' %}" alt="Darcy" style="max-width: 100%">
+            <div class="">
+              <h4><b>Darcy Meyer</b></h4>
+              <p>co-founder</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="http://hacknehs.com/assets/images/kevin.jpg" alt="Kevin" style="max-width: 100%">
+            <div class="">
+              <h4><b>Kevin Sun</b></h4>
+              <p>co-founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

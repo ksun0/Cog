@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<div id="header">
+  <div class="header-item header-item-left vertical-align">
+    {% if user.is_authenticated %}
+    <a class="greyed-out" id="hamburger-icon" onclick="menutoggle()" style="" title="Menu">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </a>
+    {% endif %}
+  </div>
+  <div class="header-item header-item-left header-item-responsive vertical-align">
+    <a onclick="changeToDashboard()"><img src="{% static 'img/logo-white.png' %}" style="width:70px;"/></a>
+  </div>
+  <div class="header-item header-item-left">
+
+    <div id="HeaderDate">
+    </div>
+  </div>
+  <div class="header-item header-item-right vertical-align">
+    {% if user.is_authenticated %}
+    <div class='dropdown'>
+      <button class="btn btn-link dropdown-toggle" type='button' data-toggle="dropdown" style='color: white; font-size:20px;text-decoration:none;'>
+        <i class="fa fa-user-circle-o"></i> <span class="header-item-responsive">{{ user.username }}</span> <i class='fa fa-angle-down'></i>
+      </button>
+      <ul class='dropdown-menu'>
+        <li>
+          <a class='dropdown-item' href='/logout'>Logout</a>
+          <a class='dropdown-item' href='https://drive.google.com/open?id=18KDvnnms_rV2EQ8eLHc7gKv74YZc08X8pBAoGYnw_NY' target="_blank">Submit a Bug</a>
+        </li>
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<form action="." method="post" id="ExtensionSettingsForm">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save"/>
+	<script>
+		// Used to be above: onclick='$("#ExtensionSettingsForm").submit()'
+        $(document).ready( function () {
+            $('#ExtensionSettingsForm').on('submit', function(e){
+                exthandler.post({'uuid': '{{uuid}}', "extension_settings_save": $(this).serialize()});
+                e.preventDefault();
+                return false;
+            });
+        })
+	</script>
+</form>

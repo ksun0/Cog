@@ -1,0 +1,57 @@
+{% load pipeline %}
+{% load staticfiles %}
+<html>
+<head>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+  {% javascript 'universal_libraries' %}
+  {% stylesheet 'libraries' %}
+
+  <title>
+    Cog | Sign Up
+  </title>
+</meta>
+</head>
+<body class="login-page">
+  <div class="container">
+    <div class="card card-container">
+      <h2 align="center" style="background-color:#03A9F4; color:#FFF;" class='jumbotron'><a href="/"><img src="{% static 'img/logo-white.png' %}" class='navbar-logo'></img></a><br>Create a New Account</h2>
+      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+      <img id="profile-img" class="profile-img-card" src="{% static 'img/avatar_1x.png' %}" />
+      <p id="profile-name" class="profile-name-card">New Cog User</p>
+      <form class='form-signin' action=".?next={{ redirect_to }}" method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+          <strong>
+            {{ error|escape }}
+          </strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+          <strong>
+            {{ error|escape }}
+          </strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- <span id="reauth-email" class="reauth-email"></span> -->
+        <input type="text" id="user" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="pwd" name="password" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-primary btn-block btn-signin" type="submit">Create Account</button>
+      </form><!-- /form -->
+      <a href="/login" class="forgot-password">
+        Login
+      </a>
+      <br>
+    </div><!-- /card-container -->
+  </div><!-- /container -->
+</body>
+</html>

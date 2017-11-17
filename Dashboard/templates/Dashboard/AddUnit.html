@@ -1,0 +1,40 @@
+<div class="modal fade" id="addCustomUnits" role="dialog">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <form action="." class="form-horizontal" method="post" novalidate="">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-9">
+                        <input class="form-control" id="title" name="title" placeholder="Title" required="" style="border:none;width:100%;font-size:18pt;" type="text"/>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>
+                            Add Custom Unit
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <textarea class="form-control" id="description" maxlength="190" name="description" placeholder="Notes" style="border:none;resize:none;width:100%;padding-top:10px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        Estimated time for one in minutes? 
+                        <input placeholder="Number" class="form-control" id="c_number" min="0.1" name="c_number" step="0.1" type="number">
+                            </input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="action" value="add_custom_unit" type="hidden"/>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-10 col-xs-2">
+                        <input class="btn btn-default" type="submit" value="Save"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "Cog",
+  "homepage": "https://github.com/Reichenbachian/Cog",
+  "description": "Bower package manager for the cog projec",
+  "main": "",
+  "authors": [
+    "Alex Reichenbach"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Dashboard/static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "clockpicker": "git://github.com/weareoutman/clockpicker#^0.0.7",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "d3": "^4.10.0"
+  }
+}

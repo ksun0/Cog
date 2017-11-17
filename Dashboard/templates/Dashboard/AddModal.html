@@ -1,0 +1,103 @@
+<div class="modal fade" id="addJobs" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="TaskElementSelector">
+                </div>
+                <form action="." class="form-horizontal" method="post" novalidate="" style="border-width:1px;" onsubmit="return validateModalForm()" name="modal_form" id="addTaskForm">
+                    {% csrf_token %}
+                    <div class="form-group" style="border-width:0px;border-bottom-width:1px; border-style:solid;border-color:#DDD;padding-bottom:15px;">
+                        <div class="col-sm-9">
+                            <input class="form-control" id="title" name="title" placeholder="Title" style="border:none;width:100%;font-size:18pt;" type="text" required/>
+                        </div>
+                        <div align="right" class="col-sm-3">
+                            <input checked="checked" class="toggle toggle-left" id="toggle-on" name="toggle" onclick="$('.event-form').hide();$('.task-form').show();" type="radio" id="task_toggle" value="task">
+                                <label class="btn btn-sm btn-custom-control" for="toggle-on">
+                                    Task
+                                </label>
+                            </input>
+                            <input class="toggle toggle-right" id="toggle-off" name="toggle" onclick="$('.task-form').hide();$('.event-form').show();" type="radio" id="event_toggle" value="event">
+                                <label class="btn btn-sm btn-cusom-control" for="toggle-off">
+                                    Event
+                                </label>
+                            </input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control" id="description" maxlength="190" name="description" placeholder="Notes" style="border:none;resize:none;width:100%;padding-top:10px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group task-form">
+                        <div align='center' class="col-sm-3">
+                            <h4>
+                                <b>How long?</b>
+                            </h4>
+                        </div>
+                        <div class="col-sm-4">
+                            <input placeholder="Number" class="form-control" id="c_number" min="0" name="c_number" step="1" type="number">
+                            </input>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control autocomplete" placeholder="Unit" id="unit" name="unit" onclick='$("#unit").autocomplete("search", "");'>
+                        </div>
+                    </div>
+                    <div class="event-form form-group" style="display:none;">
+                        <!-- make start/end time visible when event is toggled on -->
+                        <label class="col-sm-1 label-control" for="start" style="transform:translateY(50%);">
+                            Start:
+                        </label>
+                        <div class='col-sm-5'>
+                            <input data-default="20:48" id="start" value="" class='form-control datetimepicker' name='start'/>
+                        </div>
+                        <label class="col-sm-1 label-control" for="end" style="transform:translateY(50%);">
+                            End:
+                        </label>
+                        <div class='col-sm-5'>
+                            <input data-default="20:48" id="end" value="" class='form-control datetimepicker' name='end'/>
+                            <input type="hidden" class="uuid" id="uuid" value="" name='uuid'/>
+                            <input id="modal_submit_tag" type="hidden" name="action" value="add_job" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-8 col-xs-2">
+                            <input class="btn btn-default" type="button" onclick="document.getElementById('modal_submit_tag').value='delete'; $('#addModalSubmit').submit()" value="Complete" id="Complete"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <input class="btn btn-default" onclick="document.getElementById('modal_submit_tag').value='add_job';" type="submit" value="Save" id="addModalSubmit"/>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    reload_uuids();
+                    $(document).ready( function () {
+                        $('#addTaskForm').on('submit', function(e){
+                            submit_add_modal($(this).serialize());
+                            e.preventDefault();
+                            return false;
+                        });
+                    })
+                    // Load input clocks
+                    var input = $('.clockInputDuration');
+                    input.clockpicker({
+                        autoclose: true
+                    });
+
+                    $(function () {
+                        $("#start").datetimepicker();
+                        $("#end").datetimepicker({
+                            useCurrent: false
+                        });
+                        $("#start").on("dp.change", function (e) {
+                            $("#end").data("DateTimePicker").minDate(e.date);
+                        });
+                        $("#end").on("dp.change", function(e) {
+                            $("#start").data("DateTimePicker").maxDate(e.date);
+                        });
+                    });
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<nav id="sidebar-wrapper" role="navigation">
+  <ul id="sideBarList" class="sidebar-nav">
+    <li id="DashboardSelector">
+      <a onclick="changeToDashboard()">
+        <i class="fa fa-dashboard">
+        </i>
+        Dashboard
+      </a>
+    </li>
+    <li id="TaskSelector">
+      <a onclick="changeToTasks()">
+        <i class="fa fa-check-circle">
+        </i>
+        Tasks
+      </a>
+    </li>
+    <li id="EventSelector">
+      <a onclick="changeToEvents()">
+        <i class="fa fa-calendar-check-o">
+        </i>
+        Events
+      </a>
+    </li>
+    <!--<li>
+      <a href="#">
+        <i class="fa fa-bell-o">
+        </i>
+        Reminders
+      </a>
+    </li>-->
+    <hr class="sidebar-hr"/>
+    <li>
+      <a onclick="changeToCustomUnits()">
+        <i class="fa fa-th-large">
+        </i>
+        Custom Units
+      </a>
+    </li>
+    <li>
+      <a data-target="#addCustomUnits" data-toggle="modal" id="modal_toggle">
+        <i class="fa fa-plus-square">
+        </i>
+        Add Unit
+    </a>
+  </li>
+  <hr class="sidebar-hr"/>
+  {% if user.is_authenticated %}
+  <li>
+    <a data-target="#extensions" data-toggle="modal" onclick="click_extensions()">
+      <i class="fa fa-gear"></i>
+      Extensions
+    </a>
+  </li>
+  <li>
+    <div class="panel-group" onclick="load_sidebar_extension_list()">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1">Extensions</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <ul class="list-group" id="extension_sidebar">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button onclick="refreshSideBarAction()">
+      <i id="sideBarSync" class="fa fa-refresh fa-fw"></i>
+    </button>
+  </li>
+  {% else %}
+  <script>
+    window.location.href = "/"
+  </script>
+  <div align="center" class="container-fluid">
+    <h1 style="margin-top:120px; color:#555">
+      You are not logged in
+    </h1>
+    <a class="btn" href="/login">
+      Login
+    </a>
+    <a class="btn" href="/signup">
+      Create Account
+    </a>
+  </div>
+  {% endif %}
+</li>
+<hr class="sidebar-hr"/>
+
+<button class="btn btn-primary btn-lg btn-block" data-target="#addJobs" data-toggle="modal" style="" onclick="clearModal();loadUnits()" id="addJobButton">
+  <i class="fa fa-plus-square"></i>
+</button>
+
+</ul>
+</nav>

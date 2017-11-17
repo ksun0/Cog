@@ -1,0 +1,47 @@
+{% load pipeline %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+
+  {% javascript 'universal_libraries' %}
+  {% stylesheet 'libraries' %}
+  <title>Cog | Login</title>
+</head>
+<body class="login-page">
+  <div class="container">
+    <div class="card card-container">
+      <h2 align="center" style="background-color:#03A9F4; color:#FFF;" class='jumbotron'><a href="/"><img src="{% static 'img/logo-white.png' %}" class="navbar-logo"></img></a><br>Login to Cog!</h2>
+      <img id="profile-img" class="profile-img-card" src="{% static 'img/avatar_1x.png' %}" />
+      <p id="profile-name" class="profile-name-card">Cog User</p>
+      <form class='form-signin' action=".?next={{ redirect_to }}" method="post">
+        {% csrf_token %}
+        {% if login_form.non_field_errors %}
+        {% for error in login_form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- <span id="reauth-email" class="reauth-email"></span> -->
+        <input type="text" name="username" id='username' class="form-control" placeholder="Username" required autofocus>
+        <input type="password" name="password" id='password' class="form-control" placeholder="Password" required>
+        <!--<div id="remember" class="checkbox">
+        <label><input type="checkbox" value="remember-me"> Remember me</label>
+      </div>-->
+      <button class="btn btn-primary btn-block btn-signin" type="submit">Login</button>
+    </form><!-- /form -->
+    <a href="/signup" class="forgot-password">
+      Sign Up
+    </a>
+    <br>
+    <a href="#" class="forgot-password">
+      Forgot the password?
+    </a>
+  </div><!-- /card-container -->
+</div><!-- /container -->
+</body>
+</html>

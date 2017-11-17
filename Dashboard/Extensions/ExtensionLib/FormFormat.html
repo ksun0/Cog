@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+<form id="extension_form" method="POST">
+	{% crispy form %}
+	<input type="submit" value="Submit" onclick='$("#extension_form").submit()'/>
+	<script>
+        $(document).ready( function () {
+            $('#extension_form').on('submit', function(e){
+                exthandler.post({'save_data': true,
+                                  "response": $(this).serialize()});
+                changeToDashboard();
+                e.preventDefault();
+                return false;
+            });
+        })
+	</script>
+</form>

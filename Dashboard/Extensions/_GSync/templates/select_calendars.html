@@ -1,0 +1,20 @@
+{% load bootstrap %}
+<form class="form-horizontal" id="gsync_calendar_form">
+    <legend>Form Title</legend>
+    {% csrf_token %}
+    {{ form|bootstrap_horizontal }}
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+			<script type="text/javascript">
+                $(document).ready( function () {
+                    $('#gsync_calendar_form').on('submit', function(e){
+                        _next_extension_step($(this).serialize());
+                        e.preventDefault();
+                        return false;
+                    });
+                })
+			</script>
+      </div>
+    </div>
+</form>
