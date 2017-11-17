@@ -207,7 +207,7 @@ PIPELINE = {
     }
 }
 PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'django_pipeline_forgiving.storages.PipelineForgivingStorage'
 
 STATICFILES_FINDERS = (
