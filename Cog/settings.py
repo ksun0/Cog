@@ -120,7 +120,13 @@ BOWER_INSTALLED_APPS = (
     'jquery-ui',
 )
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 PIPELINE = {
     'STYLESHEETS': {
