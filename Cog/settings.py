@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 # from decouple import config
-import dj_database_url
+# import dj_database_url
 import logger
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -212,8 +212,6 @@ STATICFILES_FINDERS = (
 # SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = 'kufx5ij(o*t)z^1(p1%mw_qim2#k+o)070xno8xuhgw39gig$^'
 DEBUG = False
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'cog-tasks.herokuapp.com']
