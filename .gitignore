@@ -5,6 +5,7 @@ venv/*
 venv*
 venv
 ENV/
+.env
 Dashboard/migrations/
 Dashboard/migrations/*
 db.sqlite3
